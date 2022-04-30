@@ -76,8 +76,8 @@ module Piranha
       @[JSON::Field(key: "webServiceURL")]
       property web_service_url : String?
 
-      @[JSON::Field(key: "eventTicket")]
-      property event_ticket : Types::EventTicket
+      @[JSON::Field(key: "generic")]
+      property generic : Types::Generic
 
       def add_barcode(data) : Passbook
         @barcode = Barcode.from_json(data.to_json)

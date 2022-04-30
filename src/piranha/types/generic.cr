@@ -1,6 +1,6 @@
 module Piranha
   module Types
-    class EventTicket
+    class Generic
       include JSON::Serializable
       include JSON::Serializable::Unmapped
 
@@ -19,27 +19,27 @@ module Piranha
       @[JSON::Field(key: "auxiliaryFields")]
       property auxiliary_fields : Array(Models::Field) = [] of Models::Field
 
-      def add_header_field(data) : EventTicket
+      def add_header_field(data) : Generic
         @header_fields.push(Models::Field.from_json(data.to_json))
         self
       end
 
-      def add_primary_field(data) : EventTicket
+      def add_primary_field(data) : Generic
         @primary_fields.push(Models::Field.from_json(data.to_json))
         self
       end
 
-      def add_secondary_field(data) : EventTicket
+      def add_secondary_field(data) : Generic
         @secondary_fields.push(Models::Field.from_json(data.to_json))
         self
       end
 
-      def add_back_field(data) : EventTicket
+      def add_back_field(data) : Generic
         @back_fields.push(Models::Field.from_json(data.to_json))
         self
       end
 
-      def add_auxiliary_field(data) : EventTicket
+      def add_auxiliary_field(data) : Generic
         @auxiliary_fields.push(Models::Field.from_json(data.to_json))
         self
       end
